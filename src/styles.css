@@ -68,71 +68,62 @@
   /* IRSIM — Indian Railways inspired palette: deep night blue + signal red/amber/green */
   --background: oklch(0.16 0.03 250);
   --foreground: oklch(0.96 0.01 90);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --card: oklch(0.21 0.035 250);
+  --card-foreground: oklch(0.96 0.01 90);
+  --popover: oklch(0.21 0.035 250);
+  --popover-foreground: oklch(0.96 0.01 90);
+  /* Signal red — primary brand */
+  --primary: oklch(0.62 0.22 25);
+  --primary-foreground: oklch(0.98 0.01 90);
+  /* Signal amber */
+  --secondary: oklch(0.78 0.17 75);
+  --secondary-foreground: oklch(0.18 0.03 250);
+  --muted: oklch(0.26 0.03 250);
+  --muted-foreground: oklch(0.72 0.02 90);
+  /* Signal green */
+  --accent: oklch(0.7 0.18 145);
+  --accent-foreground: oklch(0.14 0.03 250);
+  --destructive: oklch(0.62 0.24 27);
+  --destructive-foreground: oklch(0.98 0.01 90);
+  --border: oklch(0.32 0.03 250);
+  --input: oklch(0.28 0.03 250);
+  --ring: oklch(0.62 0.22 25);
+  --chart-1: oklch(0.62 0.22 25);
+  --chart-2: oklch(0.78 0.17 75);
+  --chart-3: oklch(0.7 0.18 145);
+  --chart-4: oklch(0.6 0.15 250);
+  --chart-5: oklch(0.55 0.12 300);
+  --sidebar: oklch(0.18 0.03 250);
+  --sidebar-foreground: oklch(0.96 0.01 90);
+  --sidebar-primary: oklch(0.62 0.22 25);
+  --sidebar-primary-foreground: oklch(0.98 0.01 90);
+  --sidebar-accent: oklch(0.26 0.03 250);
+  --sidebar-accent-foreground: oklch(0.96 0.01 90);
+  --sidebar-border: oklch(0.32 0.03 250);
+  --sidebar-ring: oklch(0.62 0.22 25);
+
+  /* IRSIM custom tokens */
+  --signal-red: oklch(0.62 0.24 27);
+  --signal-amber: oklch(0.8 0.18 75);
+  --signal-green: oklch(0.72 0.2 145);
+  --rail-steel: oklch(0.55 0.01 250);
+  --gradient-hero: linear-gradient(135deg, oklch(0.16 0.03 250 / 0.4), oklch(0.1 0.04 260 / 0.95));
+  --gradient-signal: linear-gradient(180deg, var(--signal-red), oklch(0.45 0.2 25));
+  --shadow-glow: 0 0 40px oklch(0.62 0.24 27 / 0.45);
+  --shadow-signal: 0 0 24px oklch(0.72 0.2 145 / 0.55);
+  --font-display: 'Oswald', 'Impact', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
 }
 
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+@theme inline {
+  --color-signal-red: var(--signal-red);
+  --color-signal-amber: var(--signal-amber);
+  --color-signal-green: var(--signal-green);
+  --color-rail-steel: var(--rail-steel);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-sans: var(--font-body);
 }
 
 @layer base {
@@ -143,5 +134,54 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
   }
 }
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-mono-rail { font-family: var(--font-mono); }
+  .text-shadow-glow { text-shadow: 0 0 30px oklch(0.62 0.24 27 / 0.6); }
+  .bg-grid {
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .bg-rails {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent 0 38px,
+      oklch(0.96 0.01 90 / 0.6) 38px 44px,
+      transparent 44px 60px
+    );
+  }
+  .signal-pulse {
+    animation: signal-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes signal-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 currentColor, 0 0 18px currentColor; opacity: 1; }
+    50% { box-shadow: 0 0 0 8px transparent, 0 0 28px currentColor; opacity: 0.7; }
+  }
+  .train-slide {
+    animation: train-slide 28s linear infinite;
+  }
+  @keyframes train-slide {
+    from { transform: translateX(-10%); }
+    to { transform: translateX(110%); }
+  }
+  .marquee {
+    animation: marquee 40s linear infinite;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
