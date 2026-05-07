@@ -419,6 +419,55 @@ function Index() {
         </div>
       </section>
 
+      {/* SERVICES / TIMETABLE BOARDS */}
+      <section id="services" className="relative py-32 border-t border-border">
+        <div className="absolute inset-0 bg-grid opacity-20" />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
+            <div>
+              <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
+                §06 — Named Services
+              </div>
+              <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-3xl">
+                Boards on the
+                <span className="block text-primary">platform.</span>
+              </h2>
+            </div>
+            <p className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground max-w-sm">
+              Live named expresses available to drive, guard or dispatch on the IRSIM network.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {SERVICES.map((s) => (
+              <div
+                key={s.no}
+                className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] hover:translate-y-[-3px] transition overflow-hidden"
+              >
+                <div className="absolute top-2 right-3 font-display text-6xl text-black/10 select-none">
+                  {String(s.no).padStart(2, "0")}
+                </div>
+                <div className="flex items-center justify-between font-mono-rail text-xs tracking-widest font-bold">
+                  <span>{s.down} DN</span>
+                  <span>{s.up} UP</span>
+                </div>
+                <div className="mt-6 border-t border-black/30 pt-4">
+                  <div className="font-display text-2xl uppercase leading-tight tracking-wide">
+                    {s.name}
+                  </div>
+                  <div className="font-mono-rail text-[11px] uppercase tracking-widest mt-2 opacity-80">
+                    Waltan Junction ⇌ Milindagar
+                  </div>
+                </div>
+                <div className="mt-5 inline-block font-mono-rail text-[10px] uppercase tracking-widest border border-black/40 px-2 py-1 rounded-sm bg-black/10">
+                  {s.tag}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CREW / DIRECTORS */}
       <section id="crew" className="relative py-32 border-t border-border overflow-hidden">
         <div className="absolute inset-0 bg-rails opacity-[0.07]" />
