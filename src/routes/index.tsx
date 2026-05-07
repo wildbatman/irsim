@@ -531,6 +531,44 @@ function Index() {
               Join server →
             </div>
           </a>
+
+          {/* YouTube card */}
+          <a
+            href={YOUTUBE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 group flex flex-wrap items-center justify-between gap-6 p-6 md:p-8 border border-border rounded-sm bg-card/50 hover:bg-card hover:border-[#FF0033] transition"
+          >
+            <div className="flex items-center gap-5">
+              <div className="relative w-14 h-14 rounded-sm overflow-hidden shadow-[0_0_30px_oklch(0.62_0.24_27/0.5)] ring-2 ring-[#FF0033]/60">
+                <img
+                  src={irsimLogo}
+                  alt="SwiftRail YouTube avatar"
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                  className="w-full h-full object-cover bg-background"
+                />
+              </div>
+              <div>
+                <div className="font-mono-rail text-xs uppercase tracking-[0.3em] text-muted-foreground mb-1 flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#FF0033]" aria-hidden>
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+                  </svg>
+                  YouTube Channel
+                </div>
+                <div className="font-display text-2xl md:text-3xl uppercase">
+                  SwiftRail Official
+                </div>
+                <div className="font-mono-rail text-xs text-muted-foreground mt-1">
+                  youtube.com/@swiftrailofficial
+                </div>
+              </div>
+            </div>
+            <div className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground group-hover:text-[#FF0033] transition">
+              Subscribe →
+            </div>
+          </a>
         </div>
       </section>
 
