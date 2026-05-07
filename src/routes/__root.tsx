@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "IRSIM" },
+      { name: "description", content: "Indian Rails Online is a detailed Roblox railway simulation game." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "IRSIM" },
+      { property: "og:description", content: "Indian Rails Online is a detailed Roblox railway simulation game." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "IRSIM" },
+      { name: "twitter:description", content: "Indian Rails Online is a detailed Roblox railway simulation game." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Yf42yI5RxIWA7IkkDY2oIXNmibk2/social-images/social-1778152531648-noFilter_(1).webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Yf42yI5RxIWA7IkkDY2oIXNmibk2/social-images/social-1778152531648-noFilter_(1).webp" },
     ],
     links: [
       {
