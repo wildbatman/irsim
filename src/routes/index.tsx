@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroLoco from "@/assets/hero-loco.jpg";
 import signalImg from "@/assets/signal.jpg";
 import junctionImg from "@/assets/junction.jpg";
+import irsimLogo from "@/assets/irsim-logo.png";
+
+const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
+const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,27 +56,30 @@ function Index() {
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-9 h-9 bg-primary rounded-sm flex items-center justify-center font-display text-primary-foreground text-lg shadow-[var(--shadow-glow)]">
-                IR
-              </div>
-              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-accent signal-pulse text-accent" />
-            </div>
+          <a href="#" className="flex items-center gap-3">
+            <img
+              src={irsimLogo}
+              alt="IRSIM logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.62_0.24_27/0.5)]"
+            />
             <div className="font-display tracking-widest text-xl">IRSIM</div>
             <span className="hidden md:inline font-mono-rail text-xs text-muted-foreground border border-border px-2 py-0.5 rounded">
               Z-CR / DIV-RBL
             </span>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center gap-8 font-mono-rail text-xs uppercase tracking-widest">
             <a href="#about" className="hover:text-primary transition">About</a>
             <a href="#roles" className="hover:text-primary transition">Roles</a>
             <a href="#operations" className="hover:text-primary transition">Operations</a>
             <a href="#fleet" className="hover:text-primary transition">Fleet</a>
-            <a href="#crew" className="hover:text-primary transition">Crew</a>
+            <a href="#play" className="hover:text-primary transition">Play</a>
           </nav>
           <a
-            href="#play"
+            href={ROBLOX_URL}
+            target="_blank"
+            rel="noreferrer"
             className="font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:opacity-90 transition shadow-[var(--shadow-glow)]"
           >
             Play on Roblox
@@ -439,38 +446,90 @@ function Index() {
         </div>
       </section>
 
-      {/* PLAY CTA */}
-      <section id="play" className="relative py-40 border-t border-border">
+      {/* ROBLOX BANNER */}
+      <section id="play" className="relative py-32 border-t border-border">
         <div className="absolute inset-0 bg-grid opacity-30" />
-        <div className="relative max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-3 font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-6">
-            <span className="w-2 h-2 rounded-full bg-accent signal-pulse text-accent" />
-            Network is LIVE
+        <div className="relative max-w-6xl mx-auto px-6">
+          <div className="relative overflow-hidden border border-border rounded-sm bg-gradient-to-br from-card via-background to-card shadow-[var(--shadow-glow)]">
+            {/* animated rail line */}
+            <div className="absolute bottom-0 inset-x-0 h-1 bg-rails opacity-60" />
+            <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-secondary/15 blur-3xl" />
+
+            <div className="relative grid md:grid-cols-[auto_1fr_auto] items-center gap-10 p-10 md:p-14">
+              {/* Logo */}
+              <div className="relative mx-auto md:mx-0">
+                <div className="absolute inset-0 bg-primary/30 blur-2xl rounded-full" />
+                <img
+                  src={irsimLogo}
+                  alt="IRSIM official logo"
+                  width={200}
+                  height={200}
+                  loading="lazy"
+                  className="relative w-44 h-44 object-contain drop-shadow-[0_0_30px_oklch(0.62_0.24_27/0.6)]"
+                />
+              </div>
+
+              {/* Copy */}
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center gap-3 font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
+                  <span className="w-2 h-2 rounded-full bg-accent signal-pulse text-accent" />
+                  Live on Roblox · Network Active
+                </div>
+                <h2 className="font-display text-4xl md:text-6xl uppercase leading-[0.95]">
+                  Play <span className="text-primary text-shadow-glow">IR-Sim</span>
+                </h2>
+                <p className="mt-4 text-muted-foreground max-w-lg mx-auto md:mx-0">
+                  Boot the official IRSIM experience on Roblox. Pick up your post, grab the
+                  radio, and join thousands keeping the network running.
+                </p>
+                <div className="mt-3 font-mono-rail text-xs uppercase tracking-widest text-muted-foreground">
+                  Game ID · 119297331402283
+                </div>
+              </div>
+
+              {/* CTA */}
+              <a
+                href={ROBLOX_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="group shrink-0 mx-auto md:mx-0 bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-5 rounded-sm shadow-[var(--shadow-glow)] hover:translate-y-[-2px] transition flex items-center gap-3"
+              >
+                <span className="text-lg">▶</span>
+                Play on Roblox
+              </a>
+            </div>
           </div>
-          <h2 className="font-display text-6xl md:text-8xl uppercase leading-[0.9]">
-            Report for
-            <span className="block text-primary text-shadow-glow">duty.</span>
-          </h2>
-          <p className="mt-8 text-lg text-muted-foreground max-w-xl mx-auto">
-            Servers run 24/7 IST. New crew briefings every weekend. No prior experience required —
-            just patience and a working radio.
-          </p>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://www.roblox.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-10 py-5 rounded-sm shadow-[var(--shadow-glow)] hover:translate-y-[-2px] transition"
-            >
-              ▶ Play IRSIM on Roblox
-            </a>
-            <a
-              href="#about"
-              className="border border-border font-mono-rail uppercase tracking-widest text-sm px-10 py-5 rounded-sm hover:border-primary hover:text-primary transition"
-            >
-              Read the Rulebook
-            </a>
-          </div>
+
+          {/* Discord card */}
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 group flex flex-wrap items-center justify-between gap-6 p-6 md:p-8 border border-border rounded-sm bg-card/50 hover:bg-card hover:border-[#5865F2] transition"
+          >
+            <div className="flex items-center gap-5">
+              <div className="w-14 h-14 rounded-sm flex items-center justify-center bg-[#5865F2] text-white shadow-[0_0_30px_#5865F255]">
+                <svg viewBox="0 0 127.14 96.36" className="w-8 h-8 fill-current" aria-hidden>
+                  <path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.7 1.76 1.38 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z" />
+                </svg>
+              </div>
+              <div>
+                <div className="font-mono-rail text-xs uppercase tracking-[0.3em] text-muted-foreground mb-1">
+                  Official Discord
+                </div>
+                <div className="font-display text-2xl md:text-3xl uppercase">
+                  Join the Crew Lounge
+                </div>
+                <div className="font-mono-rail text-xs text-muted-foreground mt-1">
+                  discord.gg/VRaGeNJYwr
+                </div>
+              </div>
+            </div>
+            <div className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground group-hover:text-[#5865F2] transition">
+              Join server →
+            </div>
+          </a>
         </div>
       </section>
 
