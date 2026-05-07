@@ -45,10 +45,20 @@ const SIGNALS = [
 ];
 
 const LOCOS = [
+  { class: "WAG9-HC", type: "Electric Freight · High Capacity", power: "9,000 hp", top: "100 km/h" },
   { class: "WAP-7", type: "Electric Passenger", power: "6,350 hp", top: "140 km/h" },
-  { class: "WAG-9", type: "Electric Freight", power: "6,120 hp", top: "100 km/h" },
-  { class: "WDP-4D", type: "Diesel Passenger", power: "4,500 hp", top: "120 km/h" },
-  { class: "MEMU", type: "EMU Suburban", power: "EMU set", top: "100 km/h" },
+  { class: "WDG-6G-SHF", type: "Diesel Freight · Short Hood Forward", power: "6,000 hp", top: "100 km/h" },
+  { class: "WDG-6G-LHF", type: "Diesel Freight · Long Hood Forward", power: "6,000 hp", top: "100 km/h" },
+];
+
+const SERVICES = [
+  { no: 1, name: "Gangetic Express", down: "10872", up: "10871", tag: "Mail / Express" },
+  { no: 2, name: "Superfast Express", down: "11320", up: "11321", tag: "Superfast" },
+  { no: 3, name: "Otto Express", down: "32001", up: "32002", tag: "Express" },
+  { no: 4, name: "Dakshin Darshan Express", down: "15562", up: "15563", tag: "Mail / Express" },
+  { no: 5, name: "Sanchar Express", down: "23400", up: "23401", tag: "Express" },
+  { no: 6, name: "Maharami Express", down: "21446", up: "21445", tag: "Express" },
+  { no: 7, name: "Duronto Express", down: "12260", up: "12259", tag: "Premium · Non-Stop" },
 ];
 
 function Index() {
