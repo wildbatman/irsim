@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroLoco from "@/assets/hero-loco.jpg";
 import signalImg from "@/assets/signal.jpg";
 import junctionImg from "@/assets/junction.jpg";
+import irsimLogo from "@/assets/irsim-logo.png";
+
+const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
+const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
 
 export const Route = createFileRoute("/")({
   head: () => ({
