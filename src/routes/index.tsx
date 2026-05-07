@@ -159,8 +159,8 @@ function Index() {
           {/* Stats strip */}
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden backdrop-blur">
             {[
-              ["12+", "Loco Classes"],
-              ["40+", "Stations"],
+              ["4", "Loco Classes"],
+              ["7", "Named Services"],
               ["6", "Operational Roles"],
               ["24/7", "Live Network"],
             ].map(([n, l]) => (
