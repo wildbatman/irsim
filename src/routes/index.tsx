@@ -56,27 +56,30 @@ function Index() {
       {/* NAV */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="w-9 h-9 bg-primary rounded-sm flex items-center justify-center font-display text-primary-foreground text-lg shadow-[var(--shadow-glow)]">
-                IR
-              </div>
-              <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-accent signal-pulse text-accent" />
-            </div>
+          <a href="#" className="flex items-center gap-3">
+            <img
+              src={irsimLogo}
+              alt="IRSIM logo"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.62_0.24_27/0.5)]"
+            />
             <div className="font-display tracking-widest text-xl">IRSIM</div>
             <span className="hidden md:inline font-mono-rail text-xs text-muted-foreground border border-border px-2 py-0.5 rounded">
               Z-CR / DIV-RBL
             </span>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center gap-8 font-mono-rail text-xs uppercase tracking-widest">
             <a href="#about" className="hover:text-primary transition">About</a>
             <a href="#roles" className="hover:text-primary transition">Roles</a>
             <a href="#operations" className="hover:text-primary transition">Operations</a>
             <a href="#fleet" className="hover:text-primary transition">Fleet</a>
-            <a href="#crew" className="hover:text-primary transition">Crew</a>
+            <a href="#play" className="hover:text-primary transition">Play</a>
           </nav>
           <a
-            href="#play"
+            href={ROBLOX_URL}
+            target="_blank"
+            rel="noreferrer"
             className="font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:opacity-90 transition shadow-[var(--shadow-glow)]"
           >
             Play on Roblox
