@@ -6,6 +6,7 @@ import irsimLogo from "@/assets/irsim-logo.png";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
+const YOUTUBE_URL = "https://www.youtube.com/@swiftrailofficial";
 
 export const Route = createFileRoute("/")({
   head: () => ({
