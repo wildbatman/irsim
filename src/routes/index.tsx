@@ -461,7 +461,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-              §05 — Motive Power
+              §06 — Motive Power
             </div>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight">
               The shed,
@@ -500,7 +500,7 @@ function Index() {
           <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
             <div>
               <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-                §06 — Named Services
+                §07 — Named Services
               </div>
               <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-3xl">
                 Boards on the
@@ -547,7 +547,7 @@ function Index() {
         <div className="absolute inset-0 bg-rails opacity-[0.07]" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-            §06 — The Crew
+            §08 — The Crew
           </div>
           <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight mb-16 max-w-3xl">
             Built and directed by
