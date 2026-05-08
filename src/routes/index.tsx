@@ -397,7 +397,7 @@ function Index() {
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-              §04 — A Day on Section
+              §05 — A Day on Section
             </div>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight mb-6">
               Down line clear.
