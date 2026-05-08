@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroLoco from "@/assets/hero-loco.jpg";
-import signalImg from "@/assets/irsim-screenshot.jpg";
+import signalImg from "@/assets/signal-section.jpg";
 import junctionImg from "@/assets/irsim-screenshot.jpg";
 import irsimLogo from "@/assets/irsim-logo.png";
 
