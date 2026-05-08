@@ -550,14 +550,15 @@ function Index() {
             §08 — The Crew
           </div>
           <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight mb-16 max-w-3xl">
-            Built and directed by
-            <span className="text-primary"> two operators.</span>
+            Directed, managed and
+            <span className="text-primary"> kept on time.</span>
           </h2>
 
+          {/* Directors */}
           <div className="grid md:grid-cols-2 gap-px bg-border border border-border">
             {[
-              { name: "Neel", role: "Director / Co-Founder" },
-              { name: "Aviator_firebird", role: "Director / Co-Founder" },
+              { name: "Neel", role: "Director" },
+              { name: "Aviator_firebird", role: "Director" },
             ].map((p) => (
               <div key={p.name} className="bg-background p-10 relative group">
                 <div className="flex items-center gap-6">
@@ -574,6 +575,47 @@ function Index() {
                 <div className="mt-8 font-mono-rail text-xs uppercase tracking-widest text-muted-foreground">
                   CADRE · OPS · 01
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Crew tiers */}
+          <div className="mt-10 grid md:grid-cols-3 gap-px bg-border border border-border">
+            {[
+              {
+                tier: "LD-GROM",
+                title: "Lead General Railway Operations Manager",
+                people: ["Wolv", "Milan", "Czech-Mate", "Monster"],
+              },
+              {
+                tier: "GROM",
+                title: "General Railway Operations Manager",
+                people: ["Notis", "Rick Astley", "Firebird"],
+              },
+              {
+                tier: "HOE",
+                title: "Head of Engagement",
+                people: ["Draco", "SoulRisHop", "Voltix", "Sucharit", "Tan"],
+              },
+            ].map((g) => (
+              <div key={g.tier} className="bg-background p-8">
+                <div className="font-mono-rail text-xs uppercase tracking-[0.3em] text-secondary mb-2">
+                  {g.tier}
+                </div>
+                <div className="font-display text-2xl uppercase leading-tight mb-5">
+                  {g.title}
+                </div>
+                <ul className="space-y-2">
+                  {g.people.map((n) => (
+                    <li
+                      key={n}
+                      className="flex items-center gap-3 font-mono-rail text-sm"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      {n}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
