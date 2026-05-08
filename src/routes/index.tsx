@@ -173,7 +173,7 @@ function Index() {
             {[
               ["4", "Loco Classes"],
               ["7", "Named Services"],
-              ["6", "Operational Roles"],
+              ["4", "Playable Roles"],
               ["24/7", "Live Network"],
             ].map(([n, l]) => (
               <div key={l} className="bg-background/80 p-6">
