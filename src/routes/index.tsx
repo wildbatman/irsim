@@ -30,13 +30,19 @@ export const Route = createFileRoute("/")({
 });
 
 const ROLES = [
-  { name: "Loco Pilot", desc: "Drive WAP-7, WDP-4, WAG-9 and MEMU consists. Read aspects, manage notch, brake on the dot.", code: "LP" },
-  { name: "Guard", desc: "Authorise departures, monitor BPC, flag clearance, watch the rear of the formation.", code: "GD" },
-  { name: "Station Master", desc: "Run the panel, set routes, clear signals, control crossings at your block.", code: "SM" },
-  { name: "Pointsman", desc: "Operate manual points, attend trains, assist the SM during dense traffic.", code: "PM" },
-  { name: "Section Controller", desc: "Supervise an entire section. Decide overtakes, precedences and platforming.", code: "SC" },
-  { name: "Signal Operator", desc: "Work the interlocking, manage conflicting moves, keep the junction breathing.", code: "SO" },
+  { name: "Driver", desc: "Loco pilot duties — start the engine, read aspects, manage notch and brake the rake on the dot.", code: "DR" },
+  { name: "Guard", desc: "Authorise departures, watch the rear, monitor BPC and flag clearance to the LP.", code: "GD" },
+  { name: "Ticket Checker", desc: "Patrol coaches, verify tickets, handle on-board passenger interactions.", code: "TC" },
+  { name: "Passenger", desc: "Board, ride, ticket up — experience the network from the seat side of the window.", code: "PX" },
 ];
+
+const STATIONS = [
+  { name: "Waltan Junction", tag: "Major Junction · 4 PF", code: "WTJ" },
+  { name: "Ludhiyana Bypass", tag: "Bypass Halt · 2 PF", code: "LDB" },
+  { name: "Sulivar South", tag: "Through Station · 3 PF", code: "SVS" },
+  { name: "Milindagar", tag: "Terminus · 4 PF", code: "MDG" },
+];
+
 
 const SIGNALS = [
   { color: "var(--signal-red)", label: "Stop", aspect: "ON" },
