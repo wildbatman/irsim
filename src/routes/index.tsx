@@ -287,15 +287,15 @@ function Index() {
                 §03 — Pick Your Post
               </div>
               <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-2xl">
-                Six departments.
-                <span className="block text-primary">One running line.</span>
+                Four current roles.
+                <span className="block text-primary">More on application.</span>
               </h2>
             </div>
             <p className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground max-w-sm">
-              Every role is trained and tested in-game by senior crew before you're cleared for live duty.
+              Currently anyone can play as Driver, Ticket Checker, Guard or Passenger. Senior posts open through future applications on Discord.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
               <div
                 key={r.code}
@@ -312,10 +312,71 @@ function Index() {
                     {r.name}
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-                  <div className="mt-6 font-mono-rail text-xs uppercase tracking-widest text-muted-foreground group-hover:text-primary transition">
-                    Apply →
-                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Future applications callout */}
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 group flex flex-wrap items-center justify-between gap-6 p-6 md:p-8 border border-border rounded-sm bg-card/60 hover:bg-card hover:border-primary transition"
+          >
+            <div>
+              <div className="font-mono-rail text-xs uppercase tracking-[0.3em] text-secondary mb-2">
+                Future Applications
+              </div>
+              <div className="font-display text-2xl md:text-3xl uppercase leading-tight">
+                Want to be a <span className="text-primary">Driver, Guard or Ticket Checker</span> on duty?
+              </div>
+              <div className="font-mono-rail text-xs text-muted-foreground mt-2">
+                Senior crew posts open through applications on the Swift Rail Discord.
+              </div>
+            </div>
+            <div className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground group-hover:text-primary transition">
+              Apply on Discord →
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* STATIONS */}
+      <section id="stations" className="relative py-32 border-t border-border bg-card/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+            <div>
+              <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
+                §04 — On the Network
+              </div>
+              <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-2xl">
+                The stations
+                <span className="block text-primary">on line.</span>
+              </h2>
+            </div>
+            <p className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground max-w-sm">
+              Four operational stations across the IRSIM network — junctions, bypasses, through halts and a terminus.
+            </p>
+          </div>
+
+          <div className="rounded-sm overflow-hidden border border-border bg-background">
+            <img
+              src={stationsImg}
+              alt="IRSIM stations: Waltan Junction, Ludhiyana Bypass, Sulivar South, Milindagar"
+              loading="lazy"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+            {STATIONS.map((st) => (
+              <div key={st.code} className="bg-background p-6">
+                <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
+                  {st.code}
+                </div>
+                <div className="font-display text-2xl uppercase">{st.name}</div>
+                <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
               </div>
             ))}
           </div>
