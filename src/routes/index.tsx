@@ -136,10 +136,14 @@ function Index() {
             <span className="block text-primary text-shadow-glow">Indian Railways</span>
             one signal at a time.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            IRSIM is a deep-systems railway roleplay built on Roblox. Drive real loco classes,
-            work the panel at a live junction, dispatch expresses, and keep an entire network
-            moving — with people, not bots.
+          <div className="mt-6 inline-flex items-center gap-3 font-mono-rail text-[11px] uppercase tracking-[0.3em] border border-secondary/60 text-secondary px-3 py-1.5 rounded-sm bg-background/40">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary signal-pulse" />
+            Alpha · Singleplayer Build
+          </div>
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            IRSIM is a deep-systems Indian Railways simulation built on Roblox by Swift Rail.
+            Start the loco yourself, read every aspect, dispatch coaches, manage EOG power
+            and ticket passengers — a full railway, one operator at a time.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a
