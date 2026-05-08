@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import heroLoco from "@/assets/hero-loco.jpg";
 import signalImg from "@/assets/signal-section.jpg";
 import junctionImg from "@/assets/irsim-collage.jpg";
+import stationsImg from "@/assets/stations.png";
 import irsimLogo from "@/assets/irsim-logo.png";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
@@ -30,13 +31,19 @@ export const Route = createFileRoute("/")({
 });
 
 const ROLES = [
-  { name: "Loco Pilot", desc: "Drive WAP-7, WDP-4, WAG-9 and MEMU consists. Read aspects, manage notch, brake on the dot.", code: "LP" },
-  { name: "Guard", desc: "Authorise departures, monitor BPC, flag clearance, watch the rear of the formation.", code: "GD" },
-  { name: "Station Master", desc: "Run the panel, set routes, clear signals, control crossings at your block.", code: "SM" },
-  { name: "Pointsman", desc: "Operate manual points, attend trains, assist the SM during dense traffic.", code: "PM" },
-  { name: "Section Controller", desc: "Supervise an entire section. Decide overtakes, precedences and platforming.", code: "SC" },
-  { name: "Signal Operator", desc: "Work the interlocking, manage conflicting moves, keep the junction breathing.", code: "SO" },
+  { name: "Driver", desc: "Loco pilot duties — start the engine, read aspects, manage notch and brake the rake on the dot.", code: "DR" },
+  { name: "Guard", desc: "Authorise departures, watch the rear, monitor BPC and flag clearance to the LP.", code: "GD" },
+  { name: "Ticket Checker", desc: "Patrol coaches, verify tickets, handle on-board passenger interactions.", code: "TC" },
+  { name: "Passenger", desc: "Board, ride, ticket up — experience the network from the seat side of the window.", code: "PX" },
 ];
+
+const STATIONS = [
+  { name: "Waltan Junction", tag: "Major Junction · 4 PF", code: "WTJ" },
+  { name: "Ludhiyana Bypass", tag: "Bypass Halt · 2 PF", code: "LDB" },
+  { name: "Sulivar South", tag: "Through Station · 3 PF", code: "SVS" },
+  { name: "Milindagar", tag: "Terminus · 4 PF", code: "MDG" },
+];
+
 
 const SIGNALS = [
   { color: "var(--signal-red)", label: "Stop", aspect: "ON" },
@@ -83,6 +90,7 @@ function Index() {
           <nav className="hidden md:flex items-center gap-8 font-mono-rail text-xs uppercase tracking-widest">
             <a href="#about" className="hover:text-primary transition">About</a>
             <a href="#roles" className="hover:text-primary transition">Roles</a>
+            <a href="#stations" className="hover:text-primary transition">Stations</a>
             <a href="#fleet" className="hover:text-primary transition">Fleet</a>
             <a href="#services" className="hover:text-primary transition">Services</a>
             <a href="#play" className="hover:text-primary transition">Play</a>
@@ -165,7 +173,7 @@ function Index() {
             {[
               ["4", "Loco Classes"],
               ["7", "Named Services"],
-              ["6", "Operational Roles"],
+              ["4", "Playable Roles"],
               ["24/7", "Live Network"],
             ].map(([n, l]) => (
               <div key={l} className="bg-background/80 p-6">
@@ -279,15 +287,15 @@ function Index() {
                 §03 — Pick Your Post
               </div>
               <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-2xl">
-                Six departments.
-                <span className="block text-primary">One running line.</span>
+                Four current roles.
+                <span className="block text-primary">More on application.</span>
               </h2>
             </div>
             <p className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground max-w-sm">
-              Every role is trained and tested in-game by senior crew before you're cleared for live duty.
+              Currently anyone can play as Driver, Ticket Checker, Guard or Passenger. Senior posts open through future applications on Discord.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
               <div
                 key={r.code}
@@ -304,10 +312,71 @@ function Index() {
                     {r.name}
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-                  <div className="mt-6 font-mono-rail text-xs uppercase tracking-widest text-muted-foreground group-hover:text-primary transition">
-                    Apply →
-                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Future applications callout */}
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 group flex flex-wrap items-center justify-between gap-6 p-6 md:p-8 border border-border rounded-sm bg-card/60 hover:bg-card hover:border-primary transition"
+          >
+            <div>
+              <div className="font-mono-rail text-xs uppercase tracking-[0.3em] text-secondary mb-2">
+                Future Applications
+              </div>
+              <div className="font-display text-2xl md:text-3xl uppercase leading-tight">
+                Want to be a <span className="text-primary">Driver, Guard or Ticket Checker</span> on duty?
+              </div>
+              <div className="font-mono-rail text-xs text-muted-foreground mt-2">
+                Senior crew posts open through applications on the Swift Rail Discord.
+              </div>
+            </div>
+            <div className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground group-hover:text-primary transition">
+              Apply on Discord →
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* STATIONS */}
+      <section id="stations" className="relative py-32 border-t border-border bg-card/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
+            <div>
+              <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
+                §04 — On the Network
+              </div>
+              <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-2xl">
+                The stations
+                <span className="block text-primary">on line.</span>
+              </h2>
+            </div>
+            <p className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground max-w-sm">
+              Four operational stations across the IRSIM network — junctions, bypasses, through halts and a terminus.
+            </p>
+          </div>
+
+          <div className="rounded-sm overflow-hidden border border-border bg-background">
+            <img
+              src={stationsImg}
+              alt="IRSIM stations: Waltan Junction, Ludhiyana Bypass, Sulivar South, Milindagar"
+              loading="lazy"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+            {STATIONS.map((st) => (
+              <div key={st.code} className="bg-background p-6">
+                <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
+                  {st.code}
+                </div>
+                <div className="font-display text-2xl uppercase">{st.name}</div>
+                <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
               </div>
             ))}
           </div>
@@ -328,7 +397,7 @@ function Index() {
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="max-w-3xl">
             <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-              §04 — A Day on Section
+              §05 — A Day on Section
             </div>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight mb-6">
               Down line clear.
@@ -392,7 +461,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
             <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-              §05 — Motive Power
+              §06 — Motive Power
             </div>
             <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight">
               The shed,
@@ -431,7 +500,7 @@ function Index() {
           <div className="flex flex-wrap items-end justify-between gap-6 mb-16">
             <div>
               <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-                §06 — Named Services
+                §07 — Named Services
               </div>
               <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight max-w-3xl">
                 Boards on the
@@ -478,17 +547,18 @@ function Index() {
         <div className="absolute inset-0 bg-rails opacity-[0.07]" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="font-mono-rail text-xs uppercase tracking-[0.4em] text-secondary mb-4">
-            §06 — The Crew
+            §08 — The Crew
           </div>
           <h2 className="font-display text-5xl md:text-6xl uppercase leading-tight mb-16 max-w-3xl">
-            Built and directed by
-            <span className="text-primary"> two operators.</span>
+            Directed, managed and
+            <span className="text-primary"> kept on time.</span>
           </h2>
 
+          {/* Directors */}
           <div className="grid md:grid-cols-2 gap-px bg-border border border-border">
             {[
-              { name: "Neel", role: "Director / Co-Founder" },
-              { name: "Aviator_firebird", role: "Director / Co-Founder" },
+              { name: "Neel", role: "Director" },
+              { name: "Aviator_firebird", role: "Director" },
             ].map((p) => (
               <div key={p.name} className="bg-background p-10 relative group">
                 <div className="flex items-center gap-6">
@@ -505,6 +575,47 @@ function Index() {
                 <div className="mt-8 font-mono-rail text-xs uppercase tracking-widest text-muted-foreground">
                   CADRE · OPS · 01
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Crew tiers */}
+          <div className="mt-10 grid md:grid-cols-3 gap-px bg-border border border-border">
+            {[
+              {
+                tier: "LD-GROM",
+                title: "Lead General Railway Operations Manager",
+                people: ["Wolv", "Milan", "Czech-Mate", "Monster"],
+              },
+              {
+                tier: "GROM",
+                title: "General Railway Operations Manager",
+                people: ["Notis", "Rick Astley", "Firebird"],
+              },
+              {
+                tier: "HOE",
+                title: "Head of Engagement",
+                people: ["Draco", "SoulRisHop", "Voltix", "Sucharit", "Tan"],
+              },
+            ].map((g) => (
+              <div key={g.tier} className="bg-background p-8">
+                <div className="font-mono-rail text-xs uppercase tracking-[0.3em] text-secondary mb-2">
+                  {g.tier}
+                </div>
+                <div className="font-display text-2xl uppercase leading-tight mb-5">
+                  {g.title}
+                </div>
+                <ul className="space-y-2">
+                  {g.people.map((n) => (
+                    <li
+                      key={n}
+                      className="flex items-center gap-3 font-mono-rail text-sm"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      {n}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
