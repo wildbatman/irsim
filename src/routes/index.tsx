@@ -193,19 +193,20 @@ function Index() {
           </div>
           <div className="lg:col-span-7 space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              Most train games on Roblox let you drive anywhere, ignore signals, and crash for
-              fun. IRSIM does not. Every movement on this network is governed by the same
-              rules that move millions on the real Indian Railways — block working, signal
-              aspects, caution orders, line clearance, the lot.
+              IR-Sim is a railway simulation game on Roblox created by the group{" "}
+              <span className="text-foreground">Swift Rail</span>. It focuses on realistic
+              Indian railway-style operations and train management — block working, signal
+              aspects, engine startup, EOG coach handling, and the small procedural
+              details most train games skip.
             </p>
             <p>
-              You don't progress by buying upgrades. You progress by learning the rulebook,
-              passing supervised tests, and proving you can hold a panel under pressure.
-              When a controller hands you a precedence change at 03:14 IST and three trains
-              are queued behind you, that is the game.
+              The game is currently in <span className="text-foreground">Alpha / Pre-Alpha</span>{" "}
+              and primarily supports singleplayer gameplay. Features, mechanics and maps
+              evolve continuously — Roblox train sim communities tend to keep building
+              long after most players have moved on. Evolution is beautiful.
             </p>
             <div className="flex flex-wrap gap-2 pt-4 font-mono-rail text-xs uppercase tracking-widest">
-              {["Block Working", "Absolute Signalling", "Token-less", "Form T/A 912", "MACLS"].map(
+              {["Manual Operations", "Engine Startup", "Signal Handling", "EOG Coaches", "Ticketing", "Singleplayer · Alpha"].map(
                 (t) => (
                   <span key={t} className="border border-border px-3 py-1 rounded-sm text-foreground">
                     {t}
