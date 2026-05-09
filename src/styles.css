@@ -116,6 +116,46 @@
   --font-body: 'Inter', system-ui, sans-serif;
 }
 
+/* Night theme — deep night blue palette (toggle on <html>) */
+.theme-night {
+  --background: oklch(0.16 0.03 255);
+  --foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.20 0.035 255);
+  --card-foreground: oklch(0.96 0.01 250);
+  --popover: oklch(0.20 0.035 255);
+  --popover-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.62 0.24 27);
+  --primary-foreground: oklch(0.99 0.01 80);
+  --secondary: oklch(0.30 0.06 255);
+  --secondary-foreground: oklch(0.96 0.01 250);
+  --muted: oklch(0.24 0.04 255);
+  --muted-foreground: oklch(0.72 0.03 250);
+  --accent: oklch(0.68 0.17 145);
+  --accent-foreground: oklch(0.12 0.03 145);
+  --destructive: oklch(0.62 0.24 27);
+  --destructive-foreground: oklch(0.99 0.01 80);
+  --border: oklch(0.30 0.04 255);
+  --input: oklch(0.26 0.04 255);
+  --ring: oklch(0.62 0.24 27);
+  --sidebar: oklch(0.18 0.03 255);
+  --sidebar-foreground: oklch(0.96 0.01 250);
+  --sidebar-primary: oklch(0.62 0.24 27);
+  --sidebar-primary-foreground: oklch(0.99 0.01 80);
+  --sidebar-accent: oklch(0.24 0.04 255);
+  --sidebar-accent-foreground: oklch(0.96 0.01 250);
+  --sidebar-border: oklch(0.30 0.04 255);
+  --sidebar-ring: oklch(0.62 0.24 27);
+
+  --gradient-hero: linear-gradient(135deg, oklch(0.16 0.03 255 / 0.2), oklch(0.16 0.03 255 / 0.92));
+  --gradient-signal: linear-gradient(180deg, var(--primary), oklch(0.42 0.18 27));
+  --shadow-glow: 0 0 40px oklch(0.62 0.24 27 / 0.55);
+  --shadow-signal: 0 0 24px oklch(0.62 0.24 27 / 0.65);
+}
+
+html, body {
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
 @theme inline {
   --color-signal-red: var(--signal-red);
   --color-signal-amber: var(--signal-amber);
