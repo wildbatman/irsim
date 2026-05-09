@@ -96,14 +96,17 @@ function Index() {
             <a href="#services" className="hover:text-primary transition">Services</a>
             <a href="#play" className="hover:text-primary transition">Play</a>
           </nav>
-          <a
-            href={ROBLOX_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:opacity-90 transition shadow-[var(--shadow-glow)]"
-          >
-            Play on Roblox
-          </a>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <a
+              href={ROBLOX_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:opacity-90 transition shadow-[var(--shadow-glow)]"
+            >
+              Play on Roblox
+            </a>
+          </div>
         </div>
       </header>
 
