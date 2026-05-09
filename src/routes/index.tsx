@@ -38,9 +38,9 @@ const ROLES = [
 ];
 
 const STATIONS = [
-  { name: "Waltan Junction", tag: "Major Junction · 4 PF", code: "WTJ" },
-  { name: "Ludhiyana Bypass", tag: "Bypass Halt · 2 PF", code: "LDB" },
-  { name: "Sulivar South", tag: "Through Station · 3 PF", code: "SVS" },
+  { name: "Waltan Junction", tag: "Major Junction · 6 Main + 6 Side PF", code: "WTJ" },
+  { name: "Ludhiyana Bypass", tag: "Bypass · 2 Passing + 1 Terminating PF", code: "LDB" },
+  { name: "Sulivar South", tag: "Through Station · 2 PF", code: "SVS" },
   { name: "Milindagar", tag: "Terminus · 4 PF", code: "MDG" },
 ];
 
