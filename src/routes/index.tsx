@@ -590,12 +590,12 @@ function Index() {
               {
                 tier: "GROM",
                 title: "General Railway Operations Manager",
-                people: ["Notis", "Rick Astley", "Firebird"],
+                people: ["Notis", "Rick Astley", "Firebird", "Tan"],
               },
               {
                 tier: "HOE",
                 title: "Head of Engagement",
-                people: ["Draco", "SoulRisHop", "Voltix", "Sucharit", "Tan"],
+                people: ["Draco", "SoulRisHop", "Voltix", "Sucharit"],
               },
             ].map((g) => (
               <div key={g.tier} className="bg-background p-8">
