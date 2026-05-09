@@ -4,6 +4,7 @@ import signalImg from "@/assets/signal-section.jpg";
 import junctionImg from "@/assets/irsim-collage.jpg";
 import stationsImg from "@/assets/stations.png";
 import irsimLogo from "@/assets/irsim-logo.png";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
