@@ -132,34 +132,34 @@ function Index() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#play"
-              className="group bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm shadow-[var(--shadow-glow)] hover:translate-y-[-2px] transition"
+              className="btn-tactile bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm"
             >
               ▶ Join the Network
             </a>
             <a
               href="#operations"
-              className="border border-border text-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:border-primary hover:text-primary transition backdrop-blur"
+              className="btn-tactile border border-border text-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:border-primary hover:text-primary backdrop-blur"
             >
               See operations
             </a>
           </div>
 
           {/* Stats strip */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden backdrop-blur">
+          <StaggerGroup className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden backdrop-blur">
             {[
               ["4", "Loco Classes"],
               ["7", "Named Services"],
               ["4", "Playable Roles"],
               ["24/7", "Live Network"],
             ].map(([n, l]) => (
-              <div key={l} className="bg-background/80 p-6">
+              <StaggerItem key={l} className="bg-background/80 p-6">
                 <div className="font-display text-4xl text-primary">{n}</div>
                 <div className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground mt-1">
                   {l}
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
