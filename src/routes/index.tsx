@@ -4,7 +4,12 @@ import signalImg from "@/assets/signal-section.jpg";
 import junctionImg from "@/assets/irsim-collage.jpg";
 import stationsImg from "@/assets/stations.png";
 import irsimLogo from "@/assets/irsim-logo.png";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteNav } from "@/components/SiteNav";
+import { LoadingScreen } from "@/components/LoadingScreen";
+import { ThemePickerModal } from "@/components/ThemePickerModal";
+import { SignalCorners } from "@/components/SignalCorners";
+import { TrackDivider } from "@/components/TrackDivider";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/Reveal";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
