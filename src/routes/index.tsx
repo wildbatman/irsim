@@ -253,6 +253,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <TrackDivider />
 
       {/* ROLES */}
       <section id="roles" className="relative py-32 border-t border-border">
@@ -358,6 +359,7 @@ function Index() {
           </StaggerGroup>
         </div>
       </section>
+      <TrackDivider />
 
       {/* OPERATIONS / JUNCTION */}
       <section id="operations" className="relative py-32 border-t border-border">
@@ -468,6 +470,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <TrackDivider />
 
       {/* SERVICES / TIMETABLE BOARDS */}
       <section id="services" className="relative py-32 border-t border-border">
