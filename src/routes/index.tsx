@@ -77,43 +77,10 @@ const SERVICES = [
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
-          <a href="#" className="flex items-center gap-3">
-            <img
-              src={irsimLogo}
-              alt="IRSIM logo"
-              width={40}
-              height={40}
-              className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.62_0.24_27/0.5)]"
-            />
-            <div className="font-display tracking-widest text-xl">IRSIM</div>
-            <span className="hidden md:inline font-mono-rail text-xs text-muted-foreground border border-border px-2 py-0.5 rounded">
-              Z-CR / DIV-RBL
-            </span>
-          </a>
-          <nav className="hidden md:flex items-center gap-8 font-mono-rail text-xs uppercase tracking-widest">
-            <a href="#about" className="hover:text-primary transition">About</a>
-            <a href="#roles" className="hover:text-primary transition">Roles</a>
-            <a href="#stations" className="hover:text-primary transition">Stations</a>
-            <a href="#fleet" className="hover:text-primary transition">Fleet</a>
-            <a href="#services" className="hover:text-primary transition">Services</a>
-            <a href="#play" className="hover:text-primary transition">Play</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <a
-              href={ROBLOX_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:opacity-90 transition shadow-[var(--shadow-glow)]"
-            >
-              Play on Roblox
-            </a>
-          </div>
-        </div>
-      </header>
+      <LoadingScreen />
+      <ThemePickerModal />
+      <SignalCorners />
+      <SiteNav />
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pt-16">
