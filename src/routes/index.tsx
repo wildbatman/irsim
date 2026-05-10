@@ -271,9 +271,9 @@ function Index() {
               Currently anyone can play as Driver, Ticket Checker, Guard or Passenger. Senior posts open through future applications on Discord.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
-              <div
+              <StaggerItem
                 key={r.code}
                 className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden"
               >
@@ -289,9 +289,9 @@ function Index() {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
 
           {/* Future applications callout */}
           <a
