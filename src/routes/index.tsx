@@ -4,7 +4,12 @@ import signalImg from "@/assets/signal-section.jpg";
 import junctionImg from "@/assets/irsim-collage.jpg";
 import stationsImg from "@/assets/stations.png";
 import irsimLogo from "@/assets/irsim-logo.png";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteNav } from "@/components/SiteNav";
+import { LoadingScreen } from "@/components/LoadingScreen";
+import { ThemePickerModal } from "@/components/ThemePickerModal";
+import { SignalCorners } from "@/components/SignalCorners";
+import { TrackDivider } from "@/components/TrackDivider";
+import { StaggerGroup, StaggerItem } from "@/components/Reveal";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
@@ -72,43 +77,10 @@ const SERVICES = [
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* NAV */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
-          <a href="#" className="flex items-center gap-3">
-            <img
-              src={irsimLogo}
-              alt="IRSIM logo"
-              width={40}
-              height={40}
-              className="w-10 h-10 object-contain drop-shadow-[0_0_12px_oklch(0.62_0.24_27/0.5)]"
-            />
-            <div className="font-display tracking-widest text-xl">IRSIM</div>
-            <span className="hidden md:inline font-mono-rail text-xs text-muted-foreground border border-border px-2 py-0.5 rounded">
-              Z-CR / DIV-RBL
-            </span>
-          </a>
-          <nav className="hidden md:flex items-center gap-8 font-mono-rail text-xs uppercase tracking-widest">
-            <a href="#about" className="hover:text-primary transition">About</a>
-            <a href="#roles" className="hover:text-primary transition">Roles</a>
-            <a href="#stations" className="hover:text-primary transition">Stations</a>
-            <a href="#fleet" className="hover:text-primary transition">Fleet</a>
-            <a href="#services" className="hover:text-primary transition">Services</a>
-            <a href="#play" className="hover:text-primary transition">Play</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <a
-              href={ROBLOX_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:opacity-90 transition shadow-[var(--shadow-glow)]"
-            >
-              Play on Roblox
-            </a>
-          </div>
-        </div>
-      </header>
+      <LoadingScreen />
+      <ThemePickerModal />
+      <SignalCorners />
+      <SiteNav />
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pt-16">
@@ -160,34 +132,34 @@ function Index() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#play"
-              className="group bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm shadow-[var(--shadow-glow)] hover:translate-y-[-2px] transition"
+              className="btn-tactile bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm"
             >
               ▶ Join the Network
             </a>
             <a
               href="#operations"
-              className="border border-border text-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:border-primary hover:text-primary transition backdrop-blur"
+              className="btn-tactile border border-border text-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:border-primary hover:text-primary backdrop-blur"
             >
               See operations
             </a>
           </div>
 
           {/* Stats strip */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden backdrop-blur">
+          <StaggerGroup className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-sm overflow-hidden backdrop-blur">
             {[
               ["4", "Loco Classes"],
               ["7", "Named Services"],
               ["4", "Playable Roles"],
               ["24/7", "Live Network"],
             ].map(([n, l]) => (
-              <div key={l} className="bg-background/80 p-6">
+              <StaggerItem key={l} className="bg-background/80 p-6">
                 <div className="font-display text-4xl text-primary">{n}</div>
                 <div className="font-mono-rail text-xs uppercase tracking-widest text-muted-foreground mt-1">
                   {l}
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -281,6 +253,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <TrackDivider />
 
       {/* ROLES */}
       <section id="roles" className="relative py-32 border-t border-border">
@@ -299,9 +272,9 @@ function Index() {
               Currently anyone can play as Driver, Ticket Checker, Guard or Passenger. Senior posts open through future applications on Discord.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
-              <div
+              <StaggerItem
                 key={r.code}
                 className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden"
               >
@@ -317,9 +290,9 @@ function Index() {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
 
           {/* Future applications callout */}
           <a
@@ -373,19 +346,20 @@ function Index() {
             />
           </div>
 
-          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          <StaggerGroup className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {STATIONS.map((st) => (
-              <div key={st.code} className="bg-background p-6">
+              <StaggerItem key={st.code} className="bg-background p-6">
                 <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
                   {st.code}
                 </div>
                 <div className="font-display text-2xl uppercase">{st.name}</div>
                 <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
+      <TrackDivider />
 
       {/* OPERATIONS / JUNCTION */}
       <section id="operations" className="relative py-32 border-t border-border">
@@ -496,6 +470,7 @@ function Index() {
           </div>
         </div>
       </section>
+      <TrackDivider />
 
       {/* SERVICES / TIMETABLE BOARDS */}
       <section id="services" className="relative py-32 border-t border-border">
@@ -516,9 +491,9 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
-              <div
+              <StaggerItem
                 key={s.no}
                 className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] hover:translate-y-[-3px] transition overflow-hidden"
               >
@@ -540,9 +515,9 @@ function Index() {
                 <div className="mt-5 inline-block font-mono-rail text-[10px] uppercase tracking-widest border border-black/40 px-2 py-1 rounded-sm bg-black/10">
                   {s.tag}
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 

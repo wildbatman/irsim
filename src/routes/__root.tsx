@@ -115,6 +115,23 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  // Lenis smooth scroll (client-only)
+  if (typeof window !== "undefined") {
+    // initialize once
+    const w = window as unknown as { __lenisInited?: boolean };
+    if (!w.__lenisInited) {
+      w.__lenisInited = true;
+      import("lenis").then(({ default: Lenis }) => {
+        const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+        const raf = (time: number) => {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+      });
+    }
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
