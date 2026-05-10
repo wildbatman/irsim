@@ -345,17 +345,17 @@ function Index() {
             />
           </div>
 
-          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
+          <StaggerGroup className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {STATIONS.map((st) => (
-              <div key={st.code} className="bg-background p-6">
+              <StaggerItem key={st.code} className="bg-background p-6">
                 <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
                   {st.code}
                 </div>
                 <div className="font-display text-2xl uppercase">{st.name}</div>
                 <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -488,9 +488,9 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
-              <div
+              <StaggerItem
                 key={s.no}
                 className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] hover:translate-y-[-3px] transition overflow-hidden"
               >
@@ -512,9 +512,9 @@ function Index() {
                 <div className="mt-5 inline-block font-mono-rail text-[10px] uppercase tracking-widest border border-black/40 px-2 py-1 rounded-sm bg-black/10">
                   {s.tag}
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
