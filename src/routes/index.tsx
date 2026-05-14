@@ -10,6 +10,8 @@ import { ThemePickerModal } from "@/components/ThemePickerModal";
 import { SignalCorners } from "@/components/SignalCorners";
 import { TrackDivider } from "@/components/TrackDivider";
 import { StaggerGroup, StaggerItem } from "@/components/Reveal";
+import { Tilt } from "@/components/Tilt";
+import { ShedAudio } from "@/components/ShedAudio";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
