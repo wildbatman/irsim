@@ -10,8 +10,12 @@ import { ThemePickerModal } from "@/components/ThemePickerModal";
 import { SignalCorners } from "@/components/SignalCorners";
 import { TrackDivider } from "@/components/TrackDivider";
 import { StaggerGroup, StaggerItem } from "@/components/Reveal";
-import { Tilt } from "@/components/Tilt";
 import { ShedAudio } from "@/components/ShedAudio";
+import { SpotlightCard } from "@/components/SpotlightCard";
+import { HeroFX } from "@/components/HeroFX";
+import { CustomCursor } from "@/components/CustomCursor";
+import { DustParticles } from "@/components/DustParticles";
+import { ScrollingTrainSection } from "@/components/ScrollingTrainSection";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
@@ -84,18 +88,21 @@ function Index() {
       <SignalCorners />
       <SiteNav />
       <ShedAudio />
+      <CustomCursor />
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-end pt-16">
+      <section className="relative min-h-screen flex items-end pt-16 overflow-hidden">
         <img
           src={heroLoco}
           alt="WAP-7 locomotive at a foggy night platform"
           width={1920}
           height={1088}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hero-kenburns"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-grid opacity-40" />
+        <HeroFX />
+        <DustParticles density={0.05} />
 
         {/* Marquee ticker */}
         <div className="absolute top-16 inset-x-0 border-y border-border bg-background/60 backdrop-blur overflow-hidden">
@@ -135,15 +142,17 @@ function Index() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#play"
+              data-magnetic
               className="btn-tactile bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm"
             >
               ▶ Join the Network
             </a>
             <a
-              href="#operations"
+              href="#route"
+              data-magnetic
               className="btn-tactile border border-border text-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:border-primary hover:text-primary backdrop-blur"
             >
-              See operations
+              See the route
             </a>
           </div>
 
@@ -278,7 +287,7 @@ function Index() {
           <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
               <StaggerItem key={r.code}>
-                <Tilt className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden h-full will-change-transform">
+                <SpotlightCard className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden h-full will-change-transform">
                   <div className="absolute top-0 right-0 font-display text-[8rem] leading-none text-primary/5 select-none">
                     {r.code}
                   </div>
@@ -291,7 +300,7 @@ function Index() {
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                   </div>
-                </Tilt>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
@@ -351,18 +360,22 @@ function Index() {
           <StaggerGroup className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {STATIONS.map((st) => (
               <StaggerItem key={st.code}>
-                <Tilt className="bg-background p-6 h-full will-change-transform">
+                <SpotlightCard className="bg-background p-6 h-full will-change-transform">
                   <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
                     {st.code}
                   </div>
                   <div className="font-display text-2xl uppercase">{st.name}</div>
                   <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
-                </Tilt>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
         </div>
       </section>
+      <TrackDivider />
+
+      {/* SIGNATURE — SCROLLING ROUTE */}
+      <ScrollingTrainSection />
       <TrackDivider />
 
       {/* OPERATIONS / JUNCTION */}
@@ -498,7 +511,7 @@ function Index() {
           <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
               <StaggerItem key={s.no}>
-                <Tilt className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] overflow-hidden h-full will-change-transform">
+                <SpotlightCard className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] overflow-hidden h-full will-change-transform">
                   <div className="absolute top-2 right-3 font-display text-6xl text-black/10 select-none">
                     {String(s.no).padStart(2, "0")}
                   </div>
@@ -519,7 +532,7 @@ function Index() {
                       {s.tag}
                     </div>
                   </div>
-                </Tilt>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
