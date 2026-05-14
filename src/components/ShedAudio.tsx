@@ -1,16 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 /**
- * Plays /audio/shed.mp3 once when the #fleet ("The shed") section enters view.
- * Will not restart while the audio is playing. After it finishes, it only plays
- * again if the user has scrolled out of the section and back into it.
+ * Plays /audio/shed.mp3 when the #fleet ("The shed") section enters view.
+ * - Won't restart while currently playing.
+ * - After audio ends, requires the user to scroll OUT of the section and back IN
+ *   before it will play again.
  */
 export function ShedAudio() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  // True when the user is currently outside the section OR has been outside since the last play finished.
-  const hasLeftSinceEndRef = useRef(true);
   const isPlayingRef = useRef(false);
+  const hasLeftSinceEndRef = useRef(true);
 
   useEffect(() => {
     const target = document.getElementById("fleet");
@@ -18,12 +16,9 @@ export function ShedAudio() {
 
     const audio = new Audio("/audio/shed.mp3");
     audio.preload = "auto";
-    audioRef.current = audio;
 
     const handleEnded = () => {
       isPlayingRef.current = false;
-      setIsPlaying(false);
-      // Require leave + re-enter before next play
       hasLeftSinceEndRef.current = false;
     };
     audio.addEventListener("ended", handleEnded);
@@ -38,10 +33,9 @@ export function ShedAudio() {
                 .play()
                 .then(() => {
                   isPlayingRef.current = true;
-                  setIsPlaying(true);
                 })
                 .catch(() => {
-                  // Autoplay blocked — will retry on next intersection after user gesture.
+                  // Autoplay blocked — silent fail; will retry on next entry after user gesture.
                 });
             }
           } else {
@@ -58,7 +52,6 @@ export function ShedAudio() {
       observer.disconnect();
       audio.removeEventListener("ended", handleEnded);
       audio.pause();
-      audioRef.current = null;
     };
   }, []);
 
