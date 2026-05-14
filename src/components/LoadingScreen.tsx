@@ -7,15 +7,18 @@ type Variant = (typeof VARIANTS)[number];
 
 export function LoadingScreen() {
   const [done, setDone] = useState(false);
-  const variant = useMemo<Variant>(
-    () => VARIANTS[Math.floor(Math.random() * VARIANTS.length)],
-    [],
-  );
+  const [variant, setVariant] = useState<Variant | null>(null);
 
   useEffect(() => {
+    setVariant(VARIANTS[Math.floor(Math.random() * VARIANTS.length)]);
     const t = setTimeout(() => setDone(true), 2400);
     return () => clearTimeout(t);
   }, []);
+
+  if (variant === null && !done) {
+    // Render nothing on SSR/first paint to avoid hydration mismatch from random variant.
+    return null;
+  }
 
   return (
     <AnimatePresence>
