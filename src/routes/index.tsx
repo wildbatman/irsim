@@ -83,6 +83,7 @@ function Index() {
       <ThemePickerModal />
       <SignalCorners />
       <SiteNav />
+      <ShedAudio />
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-end pt-16">
