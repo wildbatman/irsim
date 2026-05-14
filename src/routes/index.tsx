@@ -142,15 +142,17 @@ function Index() {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#play"
+              data-magnetic
               className="btn-tactile bg-primary text-primary-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm"
             >
               ▶ Join the Network
             </a>
             <a
-              href="#operations"
+              href="#route"
+              data-magnetic
               className="btn-tactile border border-border text-foreground font-mono-rail uppercase tracking-widest text-sm px-8 py-4 rounded-sm hover:border-primary hover:text-primary backdrop-blur"
             >
-              See operations
+              See the route
             </a>
           </div>
 
