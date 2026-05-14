@@ -101,6 +101,8 @@ function Index() {
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-grid opacity-40" />
+        <HeroFX />
+        <DustParticles density={0.05} />
 
         {/* Marquee ticker */}
         <div className="absolute top-16 inset-x-0 border-y border-border bg-background/60 backdrop-blur overflow-hidden">
