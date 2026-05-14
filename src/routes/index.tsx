@@ -88,15 +88,16 @@ function Index() {
       <SignalCorners />
       <SiteNav />
       <ShedAudio />
+      <CustomCursor />
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-end pt-16">
+      <section className="relative min-h-screen flex items-end pt-16 overflow-hidden">
         <img
           src={heroLoco}
           alt="WAP-7 locomotive at a foggy night platform"
           width={1920}
           height={1088}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hero-kenburns"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-grid opacity-40" />
