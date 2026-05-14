@@ -277,22 +277,21 @@ function Index() {
           </div>
           <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
-              <StaggerItem
-                key={r.code}
-                className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 font-display text-[8rem] leading-none text-primary/5 select-none">
-                  {r.code}
-                </div>
-                <div className="relative">
-                  <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-3">
-                    DEPT · {r.code}
+              <StaggerItem key={r.code}>
+                <Tilt className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden h-full will-change-transform">
+                  <div className="absolute top-0 right-0 font-display text-[8rem] leading-none text-primary/5 select-none">
+                    {r.code}
                   </div>
-                  <div className="font-display text-3xl uppercase mb-4 group-hover:text-primary transition">
-                    {r.name}
+                  <div className="relative" style={{ transform: "translateZ(30px)" }}>
+                    <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-3">
+                      DEPT · {r.code}
+                    </div>
+                    <div className="font-display text-3xl uppercase mb-4 group-hover:text-primary transition">
+                      {r.name}
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
-                </div>
+                </Tilt>
               </StaggerItem>
             ))}
           </StaggerGroup>
