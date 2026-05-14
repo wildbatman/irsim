@@ -2,13 +2,16 @@ import { useRef, type ReactNode, type CSSProperties, type MouseEvent } from "rea
 
 type Props = {
   children: ReactNode;
+  /** Classes for the inner content surface (padding, bg overrides, text). */
   className?: string;
+  /** Classes for the outer gradient-border wrapper. */
+  outerClassName?: string;
   style?: CSSProperties;
-  /** Spotlight color, e.g. "oklch(0.70 0.19 50 / 0.35)" */
+  /** Spotlight color */
   spotlight?: string;
 };
 
-export function SpotlightCard({ children, className, style, spotlight }: Props) {
+export function SpotlightCard({ children, className, outerClassName, style, spotlight }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -23,7 +26,7 @@ export function SpotlightCard({ children, className, style, spotlight }: Props) 
     <div
       ref={ref}
       onMouseMove={handleMove}
-      className={`luxe-card group ${className ?? ""}`}
+      className={`luxe-card group ${outerClassName ?? "h-full"}`}
       style={
         {
           ...(style ?? {}),
@@ -32,7 +35,7 @@ export function SpotlightCard({ children, className, style, spotlight }: Props) 
       }
     >
       <div className="luxe-card__spot" aria-hidden />
-      <div className="luxe-card__inner">{children}</div>
+      <div className={`luxe-card__inner ${className ?? ""}`}>{children}</div>
     </div>
   );
 }
