@@ -10,8 +10,12 @@ import { ThemePickerModal } from "@/components/ThemePickerModal";
 import { SignalCorners } from "@/components/SignalCorners";
 import { TrackDivider } from "@/components/TrackDivider";
 import { StaggerGroup, StaggerItem } from "@/components/Reveal";
-import { Tilt } from "@/components/Tilt";
 import { ShedAudio } from "@/components/ShedAudio";
+import { SpotlightCard } from "@/components/SpotlightCard";
+import { HeroFX } from "@/components/HeroFX";
+import { CustomCursor } from "@/components/CustomCursor";
+import { DustParticles } from "@/components/DustParticles";
+import { ScrollingTrainSection } from "@/components/ScrollingTrainSection";
 
 const ROBLOX_URL = "https://www.roblox.com/games/119297331402283/IR-Sim";
 const DISCORD_URL = "https://discord.gg/VRaGeNJYwr";
