@@ -66,6 +66,7 @@ export function SiteNav() {
             href={ROBLOX_URL}
             target="_blank"
             rel="noreferrer"
+            data-magnetic
             onMouseEnter={playClick}
             className="btn-tactile font-mono-rail text-xs uppercase tracking-widest bg-primary text-primary-foreground px-4 py-2 rounded-sm"
           >
