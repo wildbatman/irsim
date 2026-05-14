@@ -282,7 +282,7 @@ function Index() {
           <StaggerGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {ROLES.map((r) => (
               <StaggerItem key={r.code}>
-                <Tilt className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden h-full will-change-transform">
+                <SpotlightCard className="group bg-background p-8 hover:bg-card transition cursor-pointer relative overflow-hidden h-full will-change-transform">
                   <div className="absolute top-0 right-0 font-display text-[8rem] leading-none text-primary/5 select-none">
                     {r.code}
                   </div>
@@ -295,7 +295,7 @@ function Index() {
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>
                   </div>
-                </Tilt>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
@@ -355,13 +355,13 @@ function Index() {
           <StaggerGroup className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {STATIONS.map((st) => (
               <StaggerItem key={st.code}>
-                <Tilt className="bg-background p-6 h-full will-change-transform">
+                <SpotlightCard className="bg-background p-6 h-full will-change-transform">
                   <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
                     {st.code}
                   </div>
                   <div className="font-display text-2xl uppercase">{st.name}</div>
                   <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
-                </Tilt>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
@@ -502,7 +502,7 @@ function Index() {
           <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
               <StaggerItem key={s.no}>
-                <Tilt className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] overflow-hidden h-full will-change-transform">
+                <SpotlightCard className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] overflow-hidden h-full will-change-transform">
                   <div className="absolute top-2 right-3 font-display text-6xl text-black/10 select-none">
                     {String(s.no).padStart(2, "0")}
                   </div>
@@ -523,7 +523,7 @@ function Index() {
                       {s.tag}
                     </div>
                   </div>
-                </Tilt>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerGroup>
