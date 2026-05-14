@@ -19,6 +19,7 @@ export function SiteNav() {
     ["About", "#about"],
     ["Roles", "#roles"],
     ["Stations", "#stations"],
+    ["Route", "#route"],
     ["Fleet", "#fleet"],
     ["Services", "#services"],
     ["Play", "#play"],
