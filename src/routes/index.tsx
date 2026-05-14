@@ -350,12 +350,14 @@ function Index() {
 
           <StaggerGroup className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border">
             {STATIONS.map((st) => (
-              <StaggerItem key={st.code} className="bg-background p-6">
-                <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
-                  {st.code}
-                </div>
-                <div className="font-display text-2xl uppercase">{st.name}</div>
-                <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
+              <StaggerItem key={st.code}>
+                <Tilt className="bg-background p-6 h-full will-change-transform">
+                  <div className="font-mono-rail text-xs uppercase tracking-widest text-secondary mb-2">
+                    {st.code}
+                  </div>
+                  <div className="font-display text-2xl uppercase">{st.name}</div>
+                  <div className="font-mono-rail text-xs text-muted-foreground mt-1">{st.tag}</div>
+                </Tilt>
               </StaggerItem>
             ))}
           </StaggerGroup>
