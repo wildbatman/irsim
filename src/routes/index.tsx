@@ -374,6 +374,10 @@ function Index() {
       </section>
       <TrackDivider />
 
+      {/* SIGNATURE — SCROLLING ROUTE */}
+      <ScrollingTrainSection />
+      <TrackDivider />
+
       {/* OPERATIONS / JUNCTION */}
       <section id="operations" className="relative py-32 border-t border-border">
         <img
