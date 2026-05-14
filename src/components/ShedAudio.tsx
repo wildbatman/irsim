@@ -16,6 +16,7 @@ export function ShedAudio() {
 
     const audio = new Audio("/audio/shed.mp3");
     audio.preload = "auto";
+    audio.volume = 0.7; // -30%
 
     const handleEnded = () => {
       isPlayingRef.current = false;
