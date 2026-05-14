@@ -497,28 +497,29 @@ function Index() {
 
           <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {SERVICES.map((s) => (
-              <StaggerItem
-                key={s.no}
-                className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] hover:translate-y-[-3px] transition overflow-hidden"
-              >
-                <div className="absolute top-2 right-3 font-display text-6xl text-black/10 select-none">
-                  {String(s.no).padStart(2, "0")}
-                </div>
-                <div className="flex items-center justify-between font-mono-rail text-xs tracking-widest font-bold">
-                  <span>{s.down} DN</span>
-                  <span>{s.up} UP</span>
-                </div>
-                <div className="mt-6 border-t border-black/30 pt-4">
-                  <div className="font-display text-2xl uppercase leading-tight tracking-wide">
-                    {s.name}
+              <StaggerItem key={s.no}>
+                <Tilt className="relative rounded-sm border-2 border-[oklch(0.55_0.20_55)] bg-gradient-to-b from-[oklch(0.62_0.22_45)] to-[oklch(0.50_0.20_35)] p-5 text-[oklch(0.15_0.05_40)] shadow-[var(--shadow-glow)] overflow-hidden h-full will-change-transform">
+                  <div className="absolute top-2 right-3 font-display text-6xl text-black/10 select-none">
+                    {String(s.no).padStart(2, "0")}
                   </div>
-                  <div className="font-mono-rail text-[11px] uppercase tracking-widest mt-2 opacity-80">
-                    Waltan Junction ⇌ Milindagar
+                  <div style={{ transform: "translateZ(25px)" }}>
+                    <div className="flex items-center justify-between font-mono-rail text-xs tracking-widest font-bold">
+                      <span>{s.down} DN</span>
+                      <span>{s.up} UP</span>
+                    </div>
+                    <div className="mt-6 border-t border-black/30 pt-4">
+                      <div className="font-display text-2xl uppercase leading-tight tracking-wide">
+                        {s.name}
+                      </div>
+                      <div className="font-mono-rail text-[11px] uppercase tracking-widest mt-2 opacity-80">
+                        Waltan Junction ⇌ Milindagar
+                      </div>
+                    </div>
+                    <div className="mt-5 inline-block font-mono-rail text-[10px] uppercase tracking-widest border border-black/40 px-2 py-1 rounded-sm bg-black/10">
+                      {s.tag}
+                    </div>
                   </div>
-                </div>
-                <div className="mt-5 inline-block font-mono-rail text-[10px] uppercase tracking-widest border border-black/40 px-2 py-1 rounded-sm bg-black/10">
-                  {s.tag}
-                </div>
+                </Tilt>
               </StaggerItem>
             ))}
           </StaggerGroup>
